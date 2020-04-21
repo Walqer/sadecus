@@ -565,7 +565,7 @@ body {
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position: 0 0;
   max-height: 800px;
   height: 100%;
 }
