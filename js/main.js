@@ -40,7 +40,9 @@ var swiper2 = new Swiper('.swiper-container2', {
   breakpoints: {
     // when window width is >= 320px
     320: {
-      slidesPerView: 1
+      slidesPerView: 1,
+      slidesOffsetBefore: 0,
+      spaceBetween: 0,
     },
     620: {
       spaceBetween: 100,
@@ -65,10 +67,16 @@ $(document).ready(function () {
 
   $('.popup-btn').click(function (event) {
     $('.popup-form').show();
+    
   });
 
   $('.close-btn').click(function (event) {
     $('.popup-form').hide();
+  });
+
+  $(this).keydown(function(eventObject){
+    if (eventObject.which == 27)
+        $('.popup-form').hide();
   });
 });
 
@@ -89,3 +97,10 @@ $(window).scroll(function() {
 	});
 
 });
+
+$("a[href='#top']").click(function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  return false;
+});
+
+new WOW().init();
